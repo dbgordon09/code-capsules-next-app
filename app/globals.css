@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* @see - https://github.com/saadeghi/daisyui/issues/3040 */
+:root:has(
+    :is(
+        .modal-open,
+        .modal:target,
+        .modal-toggle:checked + .modal,
+        .modal[open]
+      )
+  ) {
+  scrollbar-gutter: unset;
+}
+
+/* @see - https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_phrase_code_css */
+code {
+  color: crimson;
+  background-color: oklch(var(--btn-color, var(--b2)) / var(--tw-bg-opacity));
+  padding: 2px;
+}
